@@ -15,7 +15,7 @@ function Navbar({ isAuthenticated, isAdmin, handleLogout }) {
     return (
         <nav className="navigation">
             <ul>
-                {!isAuthenticated && <li><Link to="/">Home</Link></li>}
+                {<li><Link to="/">Home</Link></li>}
                 {!isAuthenticated && <li><Link to="/login">Login</Link></li>}
                 {isAuthenticated && <li><Link to="/profile">Profile</Link></li>}
                 {isAdmin && <li><Link to="/admin/user-management">User Management</Link></li>}

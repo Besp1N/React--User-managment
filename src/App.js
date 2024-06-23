@@ -9,6 +9,7 @@ import UpdateUser from './components/usersPage/UpdateUser';
 import UserManagementPage from './components/usersPage/UserManagmentPage';
 import ProfilePage from './components/usersPage/ProfilePage';
 import './App.css';
+import HomePage from "./components/homePage/HomePage";
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(UserService.isAuthenticated());
@@ -36,7 +37,7 @@ function App() {
                 <Navbar isAuthenticated={isAuthenticated} isAdmin={isAdmin} handleLogout={handleLogout} />
                 <div className="content">
                     <Routes>
-                        <Route path="/" element={<h1>HomePage</h1>}/>
+                        <Route path="/" element={<HomePage isAuthenticated={isAuthenticated} />}/>
 
                         {!!isAuthenticated && (
                             <>
