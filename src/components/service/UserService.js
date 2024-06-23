@@ -70,7 +70,7 @@ class UserService
 
     static async updateUser(userId, userData, token) {
         try {
-            const response = await axios.put(`${UserService.BASE_URL}/admin/update/${userId}`, userData, {
+            const response = await axios.put(`${UserService.BASE_URL}/admin/update-user/${userId}`, userData, {
                 headers: {Authorization: `Bearer ${token}`}
             })
             return response.data;
