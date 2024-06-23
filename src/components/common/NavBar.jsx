@@ -13,7 +13,7 @@ function Navbar({ isAuthenticated, isAdmin, handleLogout }) {
     };
 
     return (
-        <nav>
+        <nav className="navigation">
             <ul>
                 {!isAuthenticated && <li><Link to="/">Home</Link></li>}
                 {!isAuthenticated && <li><Link to="/login">Login</Link></li>}

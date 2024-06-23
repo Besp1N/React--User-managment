@@ -8,6 +8,7 @@ import UserService from './components/service/UserService.js';
 import UpdateUser from './components/usersPage/UpdateUser';
 import UserManagementPage from './components/usersPage/UserManagmentPage';
 import ProfilePage from './components/usersPage/ProfilePage';
+import './App.css';
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(UserService.isAuthenticated());

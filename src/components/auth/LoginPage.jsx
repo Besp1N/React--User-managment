@@ -33,31 +33,32 @@ function LoginPage({ onLogin }) {
             }, 5000);
         }
     }
-
     return (
         <div>
-            <h2>Login</h2>
-            {error && <p>{error}</p>}
+            <h2 className="h2-login">Login</h2>
+            {error && <p className="login-error">{error}</p>}
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="form-input">
                     <label>Email: </label>
                     <input
                         type="email"
+                        placeholder="Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
                 </div>
-                <div>
+                <div className="form-input">
                     <label>Password: </label>
                     <input
                         type="password"
+                        placeholder="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
                 </div>
-                <button type="submit">Login!</button>
+                <button type="submit" className="login-button">Login!</button>
             </form>
         </div>
     )

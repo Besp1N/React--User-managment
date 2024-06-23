@@ -1,0 +1,87 @@
+.navigation {
+    padding: 3rem 6rem;
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5rem;
+    list-style: none;
+}
+
+.navigation ul li a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: #a15ac5;
+    position: relative;
+}
+
+.navigation ul li a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 2.5rem;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: all 0.3s;
+}
+
+.navigation ul li a:hover::after {
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 3rem 6rem;
+    background: #a15ac5;
+    color: #defcf9;
+    font-size: 1.5rem;
+}
+
+.h2-login {
+    font-size: 3rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.login-error {
+    background: crimson;
+    color: #defcf9;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: .5rem;
+    border-radius: 10rem;
+    margin-bottom: 2rem;
+}
+
+.form-input label {
+    font-size: 2rem;
+    display: flex;
+    margin: 1rem 0;
+}
+
+.form-input input {
+    padding: 1rem;
+    outline: none;
+    border: 2px solid #a15ac5;
+    border-radius: 10rem;
+}
+
+.login-button {
+    margin-top: 2rem;
+    border: 2px solid #a15ac5;
+    padding: 1rem;
+    outline: none;
+    background: #fff;
+    font-size: 1.5rem;
+    border-radius: 10rem;
+    width: 10rem;
+}
