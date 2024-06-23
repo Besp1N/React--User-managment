@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/common/NavBar';
 import LoginPage from './components/auth/LoginPage';
 import RegistrationPage from './components/auth/RegistrationPage';
@@ -37,7 +37,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<h1>HomePage</h1>}/>
 
-                        {isAuthenticated && (
+                        {!!isAuthenticated && (
                             <>
                                 <Route path="/profile" element={<ProfilePage />}/>
                             </>
@@ -58,7 +58,7 @@ function App() {
                                 <Route path="/update-user/:userId" element={<UpdateUser />} />
                             </>
                         )}
-
+                        <Route path="*" element={<Navigate to="/" />} />
                     </Routes>
                 </div>
                 <FooterComponent />
