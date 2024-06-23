@@ -28,30 +28,37 @@ function App() {
         setIsAuthenticated(false);
         setIsAdmin(false);
     };
-
+    console.log(isAuthenticated);
     return (
         <BrowserRouter>
             <div className="App">
                 <Navbar isAuthenticated={isAuthenticated} isAdmin={isAdmin} handleLogout={handleLogout} />
                 <div className="content">
                     <Routes>
-                        <Route exact path="/" element={<LoginPage onLogin={handleLogin} />} />
-                        <Route exact path="/login" element={<LoginPage onLogin={handleLogin} />} />
+                        <Route path="/" element={<h1>HomePage</h1>}/>
 
                         {isAuthenticated && (
                             <>
-                                <Route path="/profile" element={<ProfilePage />} />
-                                {isAdmin && (
-                                    <>
-                                        <Route path="/register" element={<RegistrationPage />} />
-                                        <Route path="/admin/user-management" element={<UserManagementPage />} />
-                                        <Route path="/update-user/:userId" element={<UpdateUser />} />
-                                    </>
-                                )}
+                                <Route path="/profile" element={<ProfilePage />}/>
                             </>
                         )}
 
-                        <Route path="*" element={<Navigate to="/login" />} />
+                        {!isAuthenticated && (
+                            <>
+                                <Route exact path="/login" element={<LoginPage onLogin={handleLogin} />} />
+
+                            </>
+                        )}
+
+                        {/* Protected Routes for Admin */}
+                        {isAdmin && (
+                            <>
+                                <Route path="/register" element={<RegistrationPage />} />
+                                <Route path="/admin/user-management" element={<UserManagementPage />} />
+                                <Route path="/update-user/:userId" element={<UpdateUser />} />
+                            </>
+                        )}
+
                     </Routes>
                 </div>
                 <FooterComponent />
